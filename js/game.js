@@ -1,5 +1,14 @@
 // create a scene object and pass it "Game"
 let gameScene = new Phaser.Scene('Game');
+
+// Load assets
+gameScene.preload = function(){
+  // Load images,scene: background, players
+  this.load.images('background', 'assets/block.png')
+  this.load.images('enemy', 'assets/gorilla3.png')
+};
+
+
 // set the configuration of the game
 let config = {
   type: Phaser.AUTO, // Phaser will use WebGL if available, if not Canvas API
