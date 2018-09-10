@@ -10,6 +10,8 @@ gameScene.preload = function() {
 
 // called once after preload ends
 gameScene.create = function(){
+  
+  
   // create bg sprite
   let bg = this.add.sprite(0, 0, 'background'); // set this to a variable so that you can change the origin
 
@@ -18,11 +20,16 @@ gameScene.create = function(){
 
    //create the player
    let player = this.add.sprite(50, 180, 'player');
+   //change player position
+   player.x = 10
+   player.y = 20
   
   // center the sprite
   // one way to do it is
   bg.setPosition(640/2, 360/2);
   
+  //change the background scale
+  bg.setScale(3, 3);
 
   // another way to center the sprite is
   let gameWidth = this.sys.game.config.width // this. refers to our gameScene object, sys. refers to Phaser's system, game. our object, config. is an object that includes everything, and dot width or dot height
