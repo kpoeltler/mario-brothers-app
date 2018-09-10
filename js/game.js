@@ -2,16 +2,20 @@
 let gameScene = new Phaser.Scene('Game');
 
 // Load assets
-gameScene.preload = function(){
+gameScene.preload = function() {
   // Load images,scene: background, players
-  this.load.images('background', 'assets/block.png')
-  this.load.images('enemy', 'assets/gorilla3.png')
+  this.load.image('background', 'assets/block.png');
+  this.load.image('enemy', 'assets/gorilla3.png');
 };
 
 // called once after preload ends
 gameScene.create = function(){
   // create bg sprite
-  this.add.sprite(0, 0, 'background')
+  let bg = this.add.sprite(0, 0, 'background'); // set this to a variable so that you can change the origin
+
+  //change the origin to the top left corner, use the method setOrigin(0, 0)
+  bg.setOrigin(0, 0,)
+
 };
 
 // set the configuration of the game
