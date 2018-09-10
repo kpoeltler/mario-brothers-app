@@ -8,6 +8,11 @@ gameScene.preload = function(){
   this.load.images('enemy', 'assets/gorilla3.png')
 };
 
+// called once after preload ends
+gameScene.create = function(){
+  // create bg sprite
+  this.add.sprite(0, 0, 'background')
+};
 
 // set the configuration of the game
 let config = {
