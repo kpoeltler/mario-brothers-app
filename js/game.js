@@ -29,28 +29,44 @@ gameScene.create = function() {
   //create the player sprites
   let player2 = this.add.sprite(70, 250, "player2");
   let player1 = this.add.sprite(120, 80, "player1");
+  // this.player1.displayWidth = 100;
+  // this.player1.displayHeight = 150;
 
   //change player position
-  player2.setScale(0.2);
-  player1.setScale(.03);
+  // this.player2.setScale(0.2);
+  // this.player1.setScale(0.01);
 
   //create the enemy sprite
   let enemy = this.add.sprite(200, 190, 'enemy');
-  enemy.displayWidth = 120;
-  enemy.displayHeight = 180;
+  this.enemy.setScale(3)
+  this.enemy.displayWidth = 50;
+  this.enemy.displayHeight = 70;
+
+  //change angle of sprites
+  // player2.setAngle();
 
   // center the sprite
   // one way to do it is
-  // bg.setPosition(640/2, 360/2);
+  bg.setPosition(640/2, 360/2);
 
   // another way to center the sprite is
   let gameWidth = this.sys.game.config.width; // this. refers to our gameScene object, sys. refers to Phaser's system, game. our object, config. is an object that includes everything, and dot width or dot height
   let gameHeight = this.sys.game.config.height;
-  console.log(gameWidth, gameHeight);
+  console.log(gameWidth, gameHeight, "gameWidth and gameHeight");
   console.log(bg, "background image");
   console.log(this, "gameScene");
 };
 
+//this is called up to 60 times per second
+gameScene.update = function(){
+  //this.enemy.x += 1;
+  //this.enemy.angle += 1;
+
+//I want the enemy1 to grow over time till it gets to its original dimensions
+this.enemy.scaleX += 0.01;
+this.enemy.scaleY += 0.01;
+
+};
 // set the configuration of the game
 let config = {
   type: Phaser.AUTO, // Phaser will use WebGL if available, if not Canvas API
